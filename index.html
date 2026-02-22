@@ -101,13 +101,23 @@
     box-shadow: 0 1px 2px var(--shadow);
     color: var(--muted);
   }
+  
+  @media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111;
+    --card: #1c1c1c;
+    --text: #eee;
+    --muted: #aaa;
+    --shadow: rgba(0,0,0,.4);
+  }
+}
 </style>
 </head>
 <body>
   <div class="wrap">
     <div class="header">
       <h1>LP Album · Memory Wall 💛</h1>
-      <div class="meta">Images: 5 · Generated: 2026-02-22 13:09</div>
+      <div class="meta" id="meta">Images: — · Generated: 2026-02-22 13:09</div>
     </div>
 
     <div class="grid">
@@ -140,7 +150,14 @@
               <img loading="lazy" src="“卡”之后也不松手.JPG" alt="“卡”之后也不松手.JPG">
               <div class="name">“卡”之后也不松手.JPG</div>
             </a>
-            
+      
+           <script>
+            (function () {
+              const count = document.querySelectorAll('.grid .card').length;
+              const meta = document.getElementById('meta');
+              if (meta) meta.textContent = meta.textContent.replace('Images: —', `Images: ${count}`);
+            })();
+          </script> 
     </div>
     
     <footer class="footer">
@@ -152,6 +169,7 @@
   </div>
 </body>
 </html>
+
 
 
 
