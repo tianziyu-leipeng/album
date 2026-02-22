@@ -111,8 +111,41 @@
     --shadow: rgba(0,0,0,.4);
   }
 }
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.72);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    z-index: 9999;
+  }
+  
+  .lightbox.open { display: flex; }
+  
+  .lightbox img {
+    max-width: min(1100px, 96vw);
+    max-height: 86vh;
+    width: auto;
+    height: auto;
+    border-radius: 14px;
+  }
+  
+  .lightbox .hint {
+    position: fixed;
+    bottom: 14px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: rgba(255,255,255,.8);
+    font-size: 12px;
+  }
 </style>
 </head>
+
+  
 <body>
   <div class="wrap">
     <div class="header">
@@ -120,6 +153,48 @@
       <div class="meta" id="meta">Images: — · Generated: 2026-02-22 13:09</div>
     </div>
 
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <img id="lightboxImg" alt="">
+    <div class="hint">Click anywhere (or press Esc) to close</div>
+  </div>
+
+  <script>
+    (function () {
+      // auto image counter
+      const count = document.querySelectorAll('.grid .card').length;
+      const meta = document.getElementById('meta');
+      if (meta) meta.textContent = meta.textContent.replace('Images: —', `Images: ${count}`);
+
+      // lightbox
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightboxImg');
+
+      document.querySelectorAll('.grid a.card').forEach(a => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          const src = a.getAttribute('href');
+          lbImg.src = src;
+          lb.classList.add('open');
+          lb.setAttribute('aria-hidden', 'false');
+        });
+      });
+
+      function close() {
+        lb.classList.remove('open');
+        lb.setAttribute('aria-hidden', 'true');
+        lbImg.src = '';
+      }
+
+      lb.addEventListener('click', close);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') close();
+      });
+    })();
+  </script>
+
+
+    
     <div class="grid">
       
             <a class="card" href="雷导的恋足* foot f*h.JPG" target="_blank" title="雷导的恋足* foot f*h.JPG">
@@ -165,7 +240,7 @@
             })();
           </script> 
     </div>
-    
+ 
     <div class="footer">
       Offline gallery · Click any image to open full size.<br>
       All rights belong to original owners — contact me for removal if needed.<br>
@@ -175,6 +250,7 @@
   </div>
 </body>
 </html>
+
 
 
 
