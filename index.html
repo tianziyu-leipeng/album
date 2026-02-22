@@ -152,8 +152,53 @@
       <h1>LP Album · Memory Wall 💛</h1>
       <div class="meta" id="meta">Images: — · Generated: 2026-02-22 13:09</div>
     </div>
+    
+    <div class="grid">
+      
+            <a class="card" href="雷导的恋足* foot f*h.JPG" target="_blank" title="雷导的恋足* foot f*h.JPG">
+              <img loading="lazy" src="雷导的恋足* foot f*h.JPG" alt="雷导的恋足* foot f*h.JPG">
+              <div class="name">雷导的恋足* foot f*h.JPG</div>
+            </a>
+            
+
+            <a class="card" href="“结婚照”.JPG" title="“结婚照”.JPG">
+              <img loading="lazy" src="“结婚照”.JPG" alt="“结婚照”.JPG">
+              <div class="name">“结婚照”.JPG</div>
+            </a>
+            
+
+            <a class="card" href="11:59入坑点之一.JPG"  title="11:59入坑点之一.JPG">
+              <img loading="lazy" src="11:59入坑点之一.JPG" alt="11:59入坑点之一.JPG">
+              <div class="name">11:59入坑点之一.JPG</div>
+            </a>
+            
+
+            <a class="card" href="第一次见雷子这个表情.JPG"  title="第一次见雷子这个表情.JPG">
+              <img loading="lazy" src="第一次见雷子这个表情.JPG" alt="第一次见雷子这个表情.JPG">
+              <div class="name">第一次见雷子这个表情.JPG</div>
+            </a>
+            
+
+            <a class="card" href="“卡”之后也不松手.JPG" title="“卡”之后也不松手.JPG">
+              <img loading="lazy" src="“卡”之后也不松手.JPG" alt="“卡”之后也不松手.JPG">
+              <div class="name">“卡”之后也不松手.JPG</div>
+            </a>
 
 
+            <a class="card" href="都卡了5分钟了 入坑点之一.JPG" title="都卡了5分钟了 入坑点之一.JPG">
+              <img loading="lazy" src="都卡了5分钟了 入坑点之一.JPG" alt="都卡了5分钟了 入坑点之一.JPG">
+              <div class="name">都卡了5分钟了 入坑点之一.JPG</div>
+            </a>
+    </div>
+ 
+    <div class="footer">
+      Offline gallery · Click any image to open full size.<br>
+      All rights belong to original owners — contact me for removal if needed.<br>
+      — 甜玉米
+    </div>
+  </div>
+
+  
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <img id="lightboxImg" alt="">
     <div class="hint">Click anywhere (or press Esc) to close</div>
@@ -161,20 +206,20 @@
 
   <script>
     (function () {
+      const cards = document.querySelectorAll('.grid a.card');
+
       // auto image counter
-      const count = document.querySelectorAll('.grid .card').length;
       const meta = document.getElementById('meta');
-      if (meta) meta.textContent = meta.textContent.replace('Images: —', `Images: ${count}`);
+      if (meta) meta.textContent = meta.textContent.replace('Images: —', `Images: ${cards.length}`);
 
       // lightbox
       const lb = document.getElementById('lightbox');
       const lbImg = document.getElementById('lightboxImg');
 
-      document.querySelectorAll('.grid a.card').forEach(a => {
+      cards.forEach(a => {
         a.addEventListener('click', (e) => {
           e.preventDefault();
-          const src = a.getAttribute('href');
-          lbImg.src = src;
+          lbImg.src = a.getAttribute('href');
           lb.classList.add('open');
           lb.setAttribute('aria-hidden', 'false');
         });
@@ -193,63 +238,10 @@
     })();
   </script>
 
-
-    
-    <div class="grid">
-      
-            <a class="card" href="雷导的恋足* foot f*h.JPG" target="_blank" title="雷导的恋足* foot f*h.JPG">
-              <img loading="lazy" src="雷导的恋足* foot f*h.JPG" alt="雷导的恋足* foot f*h.JPG">
-              <div class="name">雷导的恋足* foot f*h.JPG</div>
-            </a>
-            
-
-            <a class="card" href="“结婚照”.JPG" target="_blank" title="“结婚照”.JPG">
-              <img loading="lazy" src="“结婚照”.JPG" alt="“结婚照”.JPG">
-              <div class="name">“结婚照”.JPG</div>
-            </a>
-            
-
-            <a class="card" href="11:59入坑点之一.JPG" target="_blank" title="11:59入坑点之一.JPG">
-              <img loading="lazy" src="11:59入坑点之一.JPG" alt="11:59入坑点之一.JPG">
-              <div class="name">11:59入坑点之一.JPG</div>
-            </a>
-            
-
-            <a class="card" href="第一次见雷子这个表情.JPG" target="_blank" title="第一次见雷子这个表情.JPG">
-              <img loading="lazy" src="第一次见雷子这个表情.JPG" alt="第一次见雷子这个表情.JPG">
-              <div class="name">第一次见雷子这个表情.JPG</div>
-            </a>
-            
-
-            <a class="card" href="“卡”之后也不松手.JPG" target="_blank" title="“卡”之后也不松手.JPG">
-              <img loading="lazy" src="“卡”之后也不松手.JPG" alt="“卡”之后也不松手.JPG">
-              <div class="name">“卡”之后也不松手.JPG</div>
-            </a>
-
-
-            <a class="card" href="都卡了5分钟了 入坑点之一.JPG" target="_blank" title="都卡了5分钟了 入坑点之一.JPG">
-              <img loading="lazy" src="都卡了5分钟了 入坑点之一.JPG" alt="都卡了5分钟了 入坑点之一.JPG">
-              <div class="name">都卡了5分钟了 入坑点之一.JPG</div>
-            </a>
-
-           <script>
-            (function () {
-              const count = document.querySelectorAll('.grid .card').length;
-              const meta = document.getElementById('meta');
-              if (meta) meta.textContent = meta.textContent.replace('Images: —', `Images: ${count}`);
-            })();
-          </script> 
-    </div>
- 
-    <div class="footer">
-      Offline gallery · Click any image to open full size.<br>
-      All rights belong to original owners — contact me for removal if needed.<br>
-      — 甜玉米
-    </div>
-
-  </div>
+  
 </body>
 </html>
+
 
 
 
